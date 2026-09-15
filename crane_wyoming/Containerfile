@@ -20,7 +20,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 ARG SOURCE_REF=main
 RUN git clone --depth 1 --branch "${SOURCE_REF}" \
-    https://codeberg.org/cryptomilk/crane-wyoming.git /src
+    https://github.com/allenbenz/crane-wyoming.git /src
 
 WORKDIR /src
 RUN cargo build --release --bin crane-wyoming
