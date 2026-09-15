@@ -5,13 +5,13 @@
 # of `apt install rustc` — this also sidesteps any glibc-version mismatch
 # a different-distro builder (e.g. Fedora) would introduce.
 #
-# CUDA_VERSION selects NVIDIA's apt package suffix (e.g. "13-2" for CUDA
-# 13.2). candle-kernels compiles custom kernels at build time via nvcc, so
+# CUDA_VERSION selects NVIDIA's apt package suffix (e.g. "13-1" for CUDA
+# 13.1). candle-kernels compiles custom kernels at build time via nvcc, so
 # the CUDA toolkit (not just the runtime) is required here.
 ARG BUILD_FROM
 FROM ${BUILD_FROM} AS builder
 
-ARG CUDA_VERSION=13-2
+ARG CUDA_VERSION=13-1
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -71,7 +71,7 @@ RUN cargo build --release --features cuda --bin crane-wyoming
 # what to inject.
 FROM ${BUILD_FROM}
 
-ARG CUDA_VERSION=13-2
+ARG CUDA_VERSION=13-1
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
