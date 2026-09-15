@@ -55,7 +55,7 @@ jobs:
         with:
           architectures: '["amd64", "aarch64"]'
           image-name: crane_wyoming
-          registry-prefix: ghcr.io/cryptomilk
+          registry-prefix: ghcr.io/allenbenz
 
   build:
     name: Build crane_wyoming (${{ matrix.arch }})
@@ -103,7 +103,7 @@ jobs:
           image-name: crane_wyoming
           image-tags: |
             ${{ needs.init.outputs.version }}
-          registry-prefix: ghcr.io/cryptomilk
+          registry-prefix: ghcr.io/allenbenz
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
 
   build-cuda:
@@ -130,7 +130,7 @@ jobs:
         uses: home-assistant/builder/actions/build-image@2026.06.0
         with:
           arch: amd64
-          image: ghcr.io/cryptomilk/crane_wyoming_cuda
+          image: ghcr.io/allenbenz/crane_wyoming_cuda
           image-tags: |
             ${{ fromJSON(steps.info.outputs.version) }}
           version: ${{ fromJSON(steps.info.outputs.version) }}
