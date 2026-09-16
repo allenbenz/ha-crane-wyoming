@@ -1,5 +1,5 @@
 name: Crane Wyoming (CUDA)
-version: "0.0.2"
+version: "0.0.5"
 slug: crane_wyoming_cuda
 description: >-
   Local text-to-speech (TTS) and speech-to-text (ASR) using the Crane
