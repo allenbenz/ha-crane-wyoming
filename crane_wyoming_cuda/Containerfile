@@ -35,7 +35,7 @@ RUN apt-get update \
 ENV PATH="/root/.cargo/bin:/usr/local/cuda/bin:${PATH}"
 ENV CUDA_HOME="/usr/local/cuda"
 
-RUN echo "cache-break-5"
+RUN echo "cache-break-10"
 ARG SOURCE_REF=main
 RUN git clone --depth 1 --branch "${SOURCE_REF}" \
     https://github.com/allenbenz/crane-wyoming.git /src
